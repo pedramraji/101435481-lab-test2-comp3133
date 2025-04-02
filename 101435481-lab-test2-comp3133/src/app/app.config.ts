@@ -10,6 +10,8 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { MissionListComponent } from './missionlist/missionlist.component';
 import { MissionDetailsComponent } from './missiondetails/missiondetails.component';
 
+
+
 const routes: Routes = [
   { path: '', component: MissionListComponent },
   { path: 'mission/:id', component: MissionDetailsComponent }
