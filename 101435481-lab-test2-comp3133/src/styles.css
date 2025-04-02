@@ -2,3 +2,103 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.filter-sort-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  mat-form-field {
+    width: 48%;
+  }
+  
+  .mission-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  mat-card {
+    width: 550px; /* or any size you prefer */
+  }
+  
+/* Styling for each individual mat-card */
+.mission-card {
+    background-color: rgb(143, 143, 179);  /* Light gray background for the card */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+    margin: 20px 0;  /* Space between cards */
+    padding: 15px;  /* Padding inside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect on the card */
+  .mission-card:hover {
+    transform: translateY(-5px);  /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Enhanced shadow on hover */
+  }
+  
+  /* Styling for the card header */
+  .mat-mdc-card-header {
+    margin-bottom: 15px;  /* Space between header and content */
+  }
+  
+  /* Styling for the title and subtitle */
+  .mat-mdc-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .mat-mdc-card-subtitle {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+/* Ensure the image does not exceed 50px in height */
+.mat-mdc-card-image {
+    max-height: 100px;  /* Limit the image height to 50px */
+    width: auto;  /* Keep the aspect ratio intact */
+    object-fit: contain;  /* Ensure the image fits without distortion */
+    margin-bottom: 15px;  /* Space between the image and content */
+  }
+  
+
+  .mat-mdc-card-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;  
+  }
+  
+
+  .mat-mdc-card-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;  /* Border to separate actions from content */
+  }
+  
+  .mat-mdc-card-actions a {
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #007bff;  /* Blue background for buttons */
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .mat-mdc-card-actions a:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+  }
+  
+  /* Optional: Make the text inside card actions look better */
+  .mat-mdc-card-actions a:focus, .mat-mdc-card-actions a:hover {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Blue outline on focus/hover */
+  }
+  

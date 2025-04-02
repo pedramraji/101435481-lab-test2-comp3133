@@ -7,7 +7,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
-// Import your components
 import { MissionListComponent } from './missionlist/missionlist.component';
 import { MissionDetailsComponent } from './missiondetails/missiondetails.component';
 
@@ -20,9 +19,9 @@ const routes: Routes = [
 // Application configuration
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes), // Provides the router with the defined routes
-    provideHttpClient(withFetch()), // Provide the HTTP client
-    provideAnimations(), // Include animations
-    importProvidersFrom(MatCardModule, MatFormFieldModule, MatInputModule), // Material modules
+    provideRouter(routes),  // Provide the router with the routes
+    provideHttpClient(withFetch()),  // Provide the HTTP client
+    provideAnimations(),  // Provide animations support
+    importProvidersFrom(MatCardModule, MatFormFieldModule, MatInputModule),  // Import necessary modules
   ],
 };

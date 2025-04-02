@@ -1,3 +1,4 @@
+
 <mat-card *ngIf="mission; else loading">
   <mat-card-header>
     <mat-card-title>{{ mission.mission_name }}</mat-card-title>
@@ -18,4 +19,3 @@
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <p>Loading mission details...</p>
 </ng-template>
-
