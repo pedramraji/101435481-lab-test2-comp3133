@@ -1,11 +1,15 @@
-export const environment = {
-  production: false
-};
-
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+import { importProvidersFrom } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RouterModule } from '@angular/router';
+import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
-import { enableProdMode } from '@angular/core'; if (environment.production) { enableProdMode(); }
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(
+      RouterModule.forRoot(routes),
+      MatProgressSpinnerModule
+    )
+  ]
+}).catch(err => console.error(err));

@@ -1,10 +1,21 @@
-<div *ngIf="mission">
-    <h2>{{ mission.mission_name }}</h2>
+<mat-card *ngIf="mission; else loading">
+  <mat-card-header>
+    <mat-card-title>{{ mission.mission_name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
     <p>{{ mission.details }}</p>
-    <img [src]="mission.links.mission_patch_small" alt="Mission Patch">
+    <img [src]="mission.links.mission_patch_small" alt="Mission Patch" class="mission-patch">
     <p>Rocket: {{ mission.rocket.rocket_name }} ({{ mission.rocket.rocket_type }})</p>
-    <a [href]="mission.links.article_link" target="_blank">Article</a>
-    <a [href]="mission.links.wikipedia" target="_blank">Wikipedia</a>
-    <a [href]="mission.links.video_link" target="_blank">Video</a>
-  </div>
-  
+    <div class="links">
+      <a mat-button [href]="mission.links.article_link" target="_blank">Article</a>
+      <a mat-button [href]="mission.links.wikipedia" target="_blank">Wikipedia</a>
+      <a mat-button [href]="mission.links.video_link" target="_blank">Video</a>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #loading>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <p>Loading mission details...</p>
+</ng-template>
+

@@ -12,10 +12,11 @@ import { MissionDetailsComponent } from './missiondetails/missiondetails.compone
 
 
 
+
 const routes: Routes = [
   { path: '', component: MissionListComponent },
-  { path: 'mission/:id', component: MissionDetailsComponent }
-];
+  { path: 'mission/:id', component: MissionDetailsComponent, data: { prerender: false } }];
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
