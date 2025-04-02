@@ -1,6 +1,8 @@
-import { Routes } from '@angular/router';
-import { MissionDetailsComponent } from './missiondetails/missiondetails.component';
+import { Component } from '@angular/core';
 
-export const routes: Routes = [
-  { path: 'mission/:id', component: MissionDetailsComponent }
-];
+@Component({
+  selector: 'app-root',
+  template: '<router-outlet></router-outlet>', // Placeholder for routed components
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {}
