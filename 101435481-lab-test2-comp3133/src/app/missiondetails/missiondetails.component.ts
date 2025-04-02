@@ -5,18 +5,19 @@ import { Mission } from '../models/mission';
 
 @Component({
   selector: 'app-missiondetails',
+  standalone: true,
   templateUrl: './missiondetails.component.html',
   styleUrls: ['./missiondetails.component.css']
 })
 export class MissionDetailsComponent implements OnInit {
-  mission?: Mission;
+  mission!: Mission;
 
   constructor(private route: ActivatedRoute, private spacexService: SpacexApiService) {}
 
   ngOnInit(): void {
-    const flightNumber = this.route.snapshot.paramMap.get('id');
-    if (flightNumber) {
-      this.spacexService.getMissionDetails(flightNumber).subscribe(data => {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.spacexService.getMissionDetails(id).subscribe(data => {
         this.mission = data;
       });
     }

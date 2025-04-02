@@ -9,4 +9,3 @@ import { enableProdMode } from '@angular/core'; if (environment.production) { en
 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
-
